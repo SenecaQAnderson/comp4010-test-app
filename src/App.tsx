@@ -1,12 +1,14 @@
 import logo from './logo.svg';
 import React, { useState } from 'react';
 import {
+  Button,
   Page,
   PageHeader,
   PageHeaderTools,
   PageSidebar,
   PageSection,
-  PageSectionVariants
+  PageSectionVariants,
+  Spinner
 } from '@patternfly/react-core';
 import './App.css';
 
@@ -36,9 +38,27 @@ function App() {
       return (
         <div className="App">
         <Page header={Header} sidebar={Sidebar}>
-          <PageSection variant={PageSectionVariants.darker}>Section with darker background</PageSection>
-          <PageSection variant={PageSectionVariants.dark}>Section with dark background</PageSection>
-          <PageSection variant={PageSectionVariants.light}>Section with light background</PageSection>
+          <PageSection variant={PageSectionVariants.light}>
+            The PatternFly components used in this app are:
+            <ul>
+              <li>- Page</li>
+              <li>- PageHeader</li>
+              <li>- PageSidebar</li>
+              <li>- PageSection</li>
+              <li>- Button</li>
+              <li>- Spinner</li>
+            </ul>
+            
+            </PageSection>
+          <PageSection variant={PageSectionVariants.light}>
+            <Button variant="secondary">This button is useless!</Button>
+          </PageSection>
+          <PageSection variant={PageSectionVariants.light}>
+            <p>This spinner will spin forever</p>
+            <Button variant="secondary">
+              <Spinner isSVG size="xl"/>
+            </Button>
+          </PageSection>
         </Page>
         </div>
       );
